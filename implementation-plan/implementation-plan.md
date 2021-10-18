@@ -4,4 +4,4 @@ What design artifacts I will create: Needs to open a text document, apply and li
 
 Who will own the team's code: Me
 
-How changes will be applied to it:
+How changes will be applied to it: Applied through text editor on Command Line and pushed to Git repository.

@@ -1,3 +1,3 @@
-Go to the store
-hello
-hello
+Go to the store.
+Go to school.
+Go to the bank.

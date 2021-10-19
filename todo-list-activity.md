@@ -33,3 +33,54 @@ Go to the store. | created on 19-Oct @ 11:27
 Line 1 removed on 19-Oct @ 11:28.
 Go to the bank | created on 19-Oct @ 11:31
 Line 1 copied on 19-Oct @ 11:32.
+Wash the dishes. | created on 19-Oct @ 11:36
+todo-list.md has been reset on 19-Oct @ 11:36
+Go to the bank. | created on 19-Oct @ 11:39
+Line 1 copied on 19-Oct @ 11:39.
+Line 2 removed on 19-Oct @ 11:39.
+todo-list.md has been reset on 19-Oct @ 11:40
+Go to the market. | created on 19-Oct @ 11:41
+Go to the bank. | created on 19-Oct @ 11:45
+Wash the dishes. | created on 19-Oct @ 11:45
+Groceries | created on 19-Oct @ 11:46
+exit | created on 19-Oct @ 11:51
+Mow the lawn. | created on 19-Oct @ 11:53
+Line 1 removed on 19-Oct @ 11:56.
+Clean the kitchen. | created on 19-Oct @ 11:57
+Wash the car. | created on 19-Oct @ 11:58
+Go fuck myself. | created on 19-Oct @ 12:02
+Line 8 copied on 19-Oct @ 12:02.
+todo-list.md has been reset on 19-Oct @ 12:02
+Make lunch. | created on 19-Oct @ 12:32
+Line 1 copied on 19-Oct @ 12:33.
+Line 1 copied on 19-Oct @ 12:37.
+todo-list.md has been reset on 19-Oct @ 12:39
+Complete kc-1.12 | created on 19-Oct @ 12:52 due by 22-Oct
+kc-1.13 | created on 19-Oct @ 12:54 due by 20-Oct
+kc-1.14 | created on 19-Oct @ 12:56
+Complete kc-1.15 | created on 19-Oct @ 12:58 | due by 25-Oct
+todo-list.md has been reset on 19-Oct @ 13:00
+Complete kc-1.10 | created on 19-Oct @ 13:01 | due by 20-Oct
+Complete kc-1.11 | created on 19-Oct @ 13:03
+Complete kc-1.12 | created on 19-Oct @ 13:04 | due by 22-Oct
+Complete kc-1.13 | created on 19-Oct @ 13:05 | due by 23-Oct
+Take out the trash. | created on 19-Oct @ 13:08
+todo-list.md has been reset on 19-Oct @ 13:10
+Complete kc-1.1 | created on 19-Oct @ 13:11 | due by 20-Oct
+Complete kc-1.2 | created on 19-Oct @ 13:12 | due by 21-Oct
+Complete kc-1.3 | created on 19-Oct @ 13:12 | due by 22-Oct
+Complete kc-1.4 | created on 19-Oct @ 13:15 | due by 23-Oct
+Complete kc-1.5 | created on 19-Oct @ 13:20 | due by 24-Oct
+Take out the trash | created on 19-Oct @ 13:21
+Line 6 removed on 19-Oct @ 13:21.
+todo-list.md has been reset on 19-Oct @ 13:38
+entry 1 | created on 19-Oct @ 13:44
+entry 2 | created on 19-Oct @ 13:44
+bubble | created on 19-Oct @ 13:44
+horses | created on 19-Oct @ 13:45
+Complete kc-1.1 | created on 19-Oct @ 14:07 | due by 20-Oct
+Line 1 copied on 19-Oct @ 14:12.
+todo-list.md has been reset on 19-Oct @ 14:25
+Complete kc-1.1 | created on 19-Oct @ 14:25 | due by 20-Oct
+Complete kc-1.2 | created on 19-Oct @ 14:26 | due by 21-Oct
+Complete kc-2.1 | created on 19-Oct @ 14:27 | due by 22-Oct

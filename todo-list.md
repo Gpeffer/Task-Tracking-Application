@@ -1,3 +1,3 @@
-Go to the bank. | created on 18-Oct @ 15:58
-Mow the lawn. | created on 18-Oct @ 16:30
-Wash the dishes. | created on 18-Oct @ 16:33
+Go to the store. | created on 19-Oct @ 11:27
+Go to the bank | created on 19-Oct @ 11:31
+Go to the store. | created on 19-Oct @ 11:27

@@ -4,8 +4,8 @@
 FILE="/home/garry/.todo/todo-list.md"
 FILE1="/home/garry/.todo/todo-list-activity.md"
 
-touch "/home/garry/.todo/todo-list.md"
-touch "/home/garry/.todo/todo-list-activity.md"
+touch "${FILE}"
+touch "${FILE1}"
 
 # Functions
 border()
@@ -23,7 +23,7 @@ display()
 	sleep .5
 	echo "Displaying entries..."
 	sleep .5
-	nl todo-list.md
+	nl "${FILE}"
 	sleep .5
 	echo ""
 	echo "Do you want to..."
@@ -52,7 +52,7 @@ display1()
 	sleep .5
 	echo "Displaying activity..."
 	sleep .5
-	nl todo-list-activity.md
+	nl "${FILE1}"
 	sleep .5
 	echo ""
 	echo "Do you want to..."

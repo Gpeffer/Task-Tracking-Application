@@ -20,25 +20,32 @@ border()
 display()
 {
 	echo ""
-	sleep .5
+	sleep .1
 	echo "Displaying entries..."
-	sleep .5
+	sleep 1
 	nl "${FILE}"
-	sleep .5
+		if [[ `nl "${FILE}" | wc -l` = "0" ]]
+		then
+			echo ""
+			echo "No entries to display at this time."
+		fi
+	sleep .1
 	echo ""
 	echo "Do you want to..."
-	sleep .1
+	sleep .5
 	border "Make an entry (entry)?"
-	sleep .1
-	border "Copy an entry (copy)?"
 	sleep .1
 	border "Remove an entry (remove)?"
 	sleep .1
-	border "View activity (activity)?"
+	border "Copy an entry (copy)?"
 	sleep .1
 	border "Reset list (reset)?"
 	sleep .1
-	border "Search (search)"
+	border "Search list (search)?"
+	sleep .1
+	border "View list (list)?"
+	sleep .1
+	border "View activity (activity)?"
 	sleep .1
 	border "Exit (exit)?"
 	sleep .1
@@ -49,25 +56,32 @@ display()
 display1()
 {
 	echo ""
-	sleep .5
+	sleep .1
 	echo "Displaying activity..."
-	sleep .5
+	sleep 1
 	nl "${FILE1}"
-	sleep .5
+		if [[ `nl "${FILE}" | wc -l` = "0" ]]
+		then
+			echo ""
+			echo "No entries to display at this time."
+		fi
+	sleep .1
 	echo ""
 	echo "Do you want to..."
-	sleep .1
+	sleep .5
 	border "Make an entry (entry)?"
-	sleep .1
-	border "Copy an entry (copy)?"
 	sleep .1
 	border "Remove an entry (remove)?"
 	sleep .1
-	border "View activity (activity)?"
+	border "Copy an entry (copy)?"
 	sleep .1
 	border "Reset list (reset)?"
 	sleep .1
-	border "Search (search)"
+	border "Search list (search)?"
+	sleep .1
+	border "View list (list)?"
+	sleep .1
+	border "View activity (activity)?"
 	sleep .1
 	border "Exit (exit)?"
 	sleep .1
@@ -77,21 +91,23 @@ display1()
 
 display2()
 {
-	sleep .5
+	sleep .1
 	echo ""
 	echo "Do you want to..."
-	sleep .1
+	sleep .5
 	border "Make an entry (entry)?"
-	sleep .1
-	border "Copy an entry (copy)?"
 	sleep .1
 	border "Remove an entry (remove)?"
 	sleep .1
-	border "View activity (activity)?"
+	border "Copy an entry (copy)?"
 	sleep .1
 	border "Reset list (reset)?"
 	sleep .1
-	border "Search (search)"
+	border "Search list (search)?"
+	sleep .1
+	border "View list (list)?"
+	sleep .1
+	border "View activity (activity)?"
 	sleep .1
 	border "Exit (exit)?"
 	sleep .1
@@ -139,15 +155,16 @@ display
 					echo ""
 					echo "Input ↓↓↓"
 					read due_date
-					sleep .1
 					echo ""
 					echo "${append} | created on "${Current_time}" | due by "${due_date}"" >> "${FILE}"
 					echo "${append} | created on "${Current_time}" | due by "${due_date}"" >> "${FILE1}"
+					sleep .5
 					echo "Entry added on "${Current_time}""
 					display
 				else
 					echo "${append} | created on "${Current_time}"" >> "${FILE}"
 					echo "${append} | created on "${Current_time}"" >> "${FILE1}"
+					sleep .5
 					echo "Entry added on "${Current_time}""
 					display
 				fi
@@ -179,7 +196,7 @@ display
 			echo ""
 			echo "Which line do you want to copy?"
 			echo ""
-			nl todo-list.md
+			nl "${FILE}"
 			echo ""
 			echo "Input ↓↓↓"
 			read copy
@@ -194,10 +211,10 @@ display
 		then
 			Current_time="$(date +%d-%b) @ $(date +%H:%M)"
 			echo ""
-			rm todo-list.md
-			touch todo-list.md
+			rm "${FILE}"
+			touch "${FILE}"
 			echo "todo-list.md has been reset on "${Current_time}""
-			echo "todo-list.md has been reset on "${Current_time}"" >> todo-list-activity.md
+			echo "todo-list.md has been reset on "${Current_time}"" >> "${FILE1}"
 			display2
 		fi
 
@@ -209,14 +226,31 @@ display
 			echo ""
 			echo "Input ↓↓↓"
 			read keyword
-			nl todo-list.md | grep "${keyword}"
+			nl "${FILE}" | grep "${keyword}"
 			echo ""
 			echo "Press 'enter' to continue"
 			read enter
 			display
 		fi
 
+		if [[ "${answer}" = "list" ]]
+		then
+			sleep .1
+			nl "${FILE}"
+				if [[ `nl "${FILE}" | wc -l` = 0 ]]
+				then
+					echo ""
+					echo "No entries to display at this time."
+				fi
+			echo ""
+			sleep .1
+			echo "Press 'enter' to continue"
+			read enter
+			display2
+		fi
+
 	done
+
 sleep .1
 echo ""
 border "Goodbye"

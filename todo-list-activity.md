@@ -91,3 +91,22 @@ horse | created on 19-Oct @ 14:45
 todo-list.md has been reset on 19-Oct @ 14:46
 Complete kc-1.1 | created on 19-Oct @ 14:49 | due by 20-Oct
 Complete kc-1.2 | created on 19-Oct @ 15:29 | due by 20-Oct
+todo-list.md has been reset on 19-Oct @ 15:48
+Complete kc-1.1 | created on 19-Oct @ 15:55 | due by 20-Oct
+Complete kc-1.2 | created on 19-Oct @ 15:58 | due by 20-Oct
+Complete kc-1.3 | created on 19-Oct @ 16:02 | due by 21-Oct
+Complete kc-1.4 | created on 19-Oct @ 16:13 | due by 22-Oct
+Complete kc-1.5 | created on 19-Oct @ 16:17 | due by 23-Oct
+Take out the trash | created on 19-Oct @ 16:21
+take out the trash | created on 19-Oct @ 16:22 | due by today @ 3pm
+Line 7 removed on 19-Oct @ 16:23.
+Line 6 removed on 19-Oct @ 16:24.
+todo-list.md has been reset on 19-Oct @ 16:24
+horse | created on 19-Oct @ 16:24
+pig | created on 19-Oct @ 16:24
+todo-list.md has been reset on 19-Oct @ 16:25
+Complete kc-1.1 | created on 19-Oct @ 18:28 | due by 20-Oct
+Line 1 removed on 19-Oct @ 18:30.
+Complete kc-1.1 | created on 19-Oct @ 18:33 | due by 20-Oct
+Take out the trash | created on 19-Oct @ 18:33
+Line 2 removed on 19-Oct @ 23:40.

@@ -20,14 +20,13 @@ border()
 
 entries()
 {
-	if [[ `nl "${file}" | wc -l` = "0" ]]
+	if [[ $(nl "${file}" | wc -l) = "0" ]]
 	then
 		echo ""
 		echo "No entries to display at this time."
-		sleep .1
 		echo ""
 		echo "Press enter to continue."
-		read enter
+		read -r enter
 		clear
 	else
 		echo ""
@@ -35,10 +34,9 @@ entries()
 		sleep .5
 		echo ""
 		nl "${file}"
-		sleep .1
 		echo ""
 		echo "Press enter to continue"
-		read enter
+		read -r enter
 		clear
 	fi
 }
@@ -47,25 +45,18 @@ options()
 {
 	echo ""
 	echo "What would you like to do?"
-	sleep .1
 	border "Make an entry (entry)?"
-	sleep .1
 	border "Delete an entry (delete)?"
-	sleep .1
 	border "Copy an entry (copy)?"
-	sleep .1
 	border "Reset list (reset)?"
-	sleep .1
 	border "Search entries (search)?"
-	sleep .1
 	border "View list (list)?"
-	sleep .1
 	border "View activity (activity)?"
-	sleep .1
 	border "Exit (exit)?"
-	sleep .1
 	echo ""
 	echo "Input ↓↓↓"
+	read -r answer
+	clear
 }
 
 #begin script
@@ -74,11 +65,9 @@ echo ""
 border "Welcome to your daily dose of organization!"
 sleep 1
 entries
-options
 until [[ "$answer" = "exit" ]]
 do
-	read answer
-	clear
+	options
 	if [[ "${answer}" = "entry" ]]
 	then
 		time="$(date +%d-%b) @ $(date +%H:%M)"
@@ -87,13 +76,13 @@ do
 		echo "Ready to append..."
 		echo ""
 		echo "Input ↓↓↓"
-		read append
+		read -r append
 		clear
 		echo ""
 		echo "Do you want to add a due date (yes/no)?"
 		echo ""
 		echo "Input ↓↓↓"
-		read add_due_date
+		read -r add_due_date
 		echo ""
 		if [[ "${add_due_date}" = "yes" ]]
 		then
@@ -102,30 +91,29 @@ do
 			echo "When is this due (Day-Month)? Type (today) to automatically apply today's date."
 			echo ""
 			echo "Input ↓↓↓"
-			read due_date
+			read -r due_date
 			if [[ "${due_date}" = "today" ]]
 			then
-				echo ""${append}" | created on "${time}" | due by "${today}"" >> "${file}"
-				echo "Added \""${append}"\" | created on "${time}" | due by "${today}"" >> "${file1}"
+				echo """${append}"" | created on ""${time}"" | due by ""${today}""" >> "${file}"
+				echo "Added \"""${append}""\" | created on ""${time}"" | due by ""${today}""" >> "${file1}"
 				clear
 			else
-				echo ""${append}" | created on "${time}" | due by "${due_date}"" >> "${file}"
-				echo "Added \""${append}"\" | created on "${time}" | due by "${due_date}"" >> "${file1}"
+				echo """${append}"" | created on ""${time}"" | due by ""${due_date}""" >> "${file}"
+				echo "Added \"""${append}""\" | created on ""${time}"" | due by ""${due_date}""" >> "${file1}"
 				clear
 			fi
 		else
-			echo ""${append}" | created on "${time}"" >> "${file}"
-			echo ""${append}" | created on "${time}"" >> "${file1}"
+			echo """${append}"" | created on ""${time}""" >> "${file}"
+			echo """${append}"" | created on ""${time}""" >> "${file1}"
 			clear
 		fi
 		entries
-		options
 	fi
 	if [[ "${answer}" = "delete" ]]
 	then
 		time="$(date +%d-%b) @ $(date +%H:%M)"
 		clear
-		if [[ `nl "${file}" | wc -l` != "0" ]]
+		if [[ $(nl "${file}" | wc -l) != "0" ]]
 		then
 			echo ""
 			echo "Displaying entries..."
@@ -133,32 +121,29 @@ do
 			echo ""
 			nl "${file}"
 			echo ""
-			sleep .1
 			echo "Which line would you like to delete (1,2,3,etc)?"
 			echo ""
 			echo "Input ↓↓↓"
-			read delete
-			sed -i "${delete}"'d' "${file}"
-			echo "Line "${delete}" has been deleted."
-			echo "Deleted line "${delete}" | on "${time}"" >> "${file1}"
+			read -r delete
 			clear
-			entries
-			options
+			echo ""
+			sed -i "${delete}"'d' "${file}"
+			echo "Line ""${delete}"" has been deleted."
+			echo "Deleted line ""${delete}"" | on ""${time}""" >> "${file1}"
 		else
 			echo "No entries to display at this time."
-			echo ""
-			echo "Press enter to continue."
-			read enter
-			clear
-			entries
-			options
 		fi
+		echo ""
+		echo "Press enter to continue."
+		read -r enter
+		clear
+		entries
 	fi
 	if [[ "${answer}" = "copy" ]]
 	then
 		time="$(date +%d-%b) @ $(date +%H:%M)"
 		clear
-		if [[ `nl "${file}" | wc -l` != "0" ]]
+		if [[ $(nl "${file}" | wc -l) != "0" ]]
 		then
 			echo ""
 			echo "Displaying entries..."
@@ -166,26 +151,21 @@ do
 			echo ""
 			nl "${file}"
 			echo ""
-			sleep .1
 			echo "Which line would you like to copy (1,2,3,etc)?"
 			echo ""
 			echo "Input ↓↓↓"
-			read copy
+			read -r copy
 			sed -n "${copy}"p "${file}" >> "${file}"
-			echo "Line "${copy}" has been copied."
-			echo "Copied line "${copy}" | on "${time}"" >> "${file1}"
-			clear
-			entries
-			options
+			echo "Line ""${copy}"" has been copied."
+			echo "Copied line ""${copy}"" | on ""${time}""" >> "${file1}"
 		else
 			echo "No entries to display at this time."
 			echo ""
 			echo "Press enter to continue."
-			read enter
-			clear
-			entries
-			options
+			read -r enter
 		fi
+		clear
+		entries
 	fi
 	if [[ "${answer}" = "reset" ]]
 	then
@@ -194,30 +174,32 @@ do
 		echo "Are you sure you want to erase all entries (yes/no)?"
 		echo ""
 		echo "Input ↓↓↓"
-		read erase
+		read -r erase
 		if [[ "${erase}" = "yes" ]]
 		then
-			if [[ `nl "${file}" | wc -l` = "0" ]]
+			if [[ $(nl "${file}" | wc -l) = "0" ]]
 			then
 				clear
 				echo "There are no entries to remove."
 				echo ""
 				echo "Press enter to continue"
-				read enter
+				read -r enter
 			else
 				clear
 				rm "${file}"
 				touch "${file}"
 				echo ""
 				echo "Your list has been reset."
-				echo "Reset list | on "${time}"" >> "${file1}"
+				echo "Reset list | on ""${time}""" >> "${file1}"
 				echo ""
 				echo "Press enter to continue"
-				read enter
+				read -r enter
 			fi
 		fi
+		echo ""
+		echo "Press enter to continue"
+		read -r enter
 		clear
-		options
 	fi
 	if [[ "${answer}" = "search" ]]
 	then
@@ -226,58 +208,45 @@ do
 		echo "Enter keyword."
 		echo ""
 		echo "Input ↓↓↓"
-		read keyword
+		read -r keyword
 		echo ""
-		if [[ `nl "${file}" | grep -i "${keyword}" | wc -l` = "0" ]]
+		if [[ $(nl "${file}" | grep -i -c "${keyword}") = "0" ]]
 		then
 			clear
-			echo "No entries returned."
 			echo ""
-			echo "Press enter to continue."
-			read enter
-			clear
-			options
+			echo "No entries returned."
 		else
 			clear
+			echo ""
 			echo "Displaying matching entries..."
 			echo ""
 			nl "${file}" | grep -i "${keyword}"
-			echo "Searched for "${keyword}" | on "${time}"" >> "${file1}"
-			echo ""
-			echo "Press enter to continue."
-			read enter
-			clear
-			options
+			echo "Searched for ""${keyword}"" | on ""${time}""" >> "${file1}"
 		fi
+		echo ""
+		echo "Press enter to continue."
+		read -r enter
+		clear
 	fi
 	if [[ "${answer}" = "list" ]]
 	then
 		time="$(date +%d-%b) @ $(date +%H:%M)"
-		if [[ `nl "${file}" | wc -l` = "0" ]]
+		clear
+		echo ""
+		if [[ $(nl "${file}" | wc -l) = "0" ]]
 		then
-			clear
-			echo ""
 			echo "No entries to display at this time."
-			echo ""
-			echo "Press enter to continue."
-			read enter
-			clear
-			options
 		else
-			clear
-			echo ""
 			echo "Listing all entries..."
 			echo ""
 			sleep .5
 			nl "${file}"
-			sleep .1
-			echo "Listed entries | on "${time}"" >> "${file1}"
-			echo ""
-			echo "Press enter to continue."
-			read enter
-			clear
-			options
+			echo "Listed entries | on ""${time}""" >> "${file1}"
 		fi
+		echo ""
+		echo "Press enter to continue."
+		read -r enter
+		clear
 	fi
 	if [[ "${answer}" = "activity" ]]
 	then
@@ -285,16 +254,50 @@ do
 		nl "${file1}"
 		echo ""
 		echo "Press enter to continue."
-		read enter
+		read -r enter
 		clear
-		entries
-		options
 	fi
-	if [[ "${answer}" = $1 ]]
-	then
-		echo "Invald input"
-		options
-	fi
+#	if [[ "${answer}" = "move" ]]
+#	then
+#		time="$(date +%d-%b) @ $(date +%H:%M)"
+#		local moveto="sed -n "${to}""
+#		if [[ $(nl "${file}" | wc -l) = "0" ]]
+#		then
+#			clear
+#			echo ""
+#			echo "No entries to display at this time."
+#			echo ""
+#			echo "Press enter to continue."
+#			read -r enter
+#			clear
+#			options
+#		else
+#			clear
+#			echo ""
+#			echo "Displaying all entries..."
+#			sleep .5
+#			echo ""
+#			nl "${file}"
+#			echo ""
+#			echo "Which line would you like to move?"
+#			echo ""
+#			echo "Input ↓↓↓"
+#			read -r move
+#			clear
+#			echo ""
+#			echo "Which line would you like to move it to?"
+#			echo ""
+#			echo "Input ↓↓↓"
+#			read -r to
+#			sed -n "${move}"p "${file}" >> (sed -n "${to}" "${file}")
+#			clear
+#			echo ""
+#			echo "Line "${move}" has been moved to line "${to}""
+#			entries
+#			clear
+#			options
+#		fi
+#	fi
 done
 echo ""
 border "Goodbye!"

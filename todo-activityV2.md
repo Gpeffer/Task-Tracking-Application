@@ -203,3 +203,15 @@ Copied line 4 | on 26-Oct @ 16:35
 Deleted line 4 | on 26-Oct @ 16:35
 Deleted line 5 | on 26-Oct @ 16:35
 Deleted line 4 | on 26-Oct @ 16:35
+Listed entries | on 28-Oct @ 13:07
+Added "Complete activity-2.10" | created on 28-Oct @ 13:07 | due by 29-Oct
+Added "Complete activity-2.12" | created on 28-Oct @ 13:08 | due by 29-Oct
+Added "Complete activity-2.13" | created on 28-Oct @ 13:08 | due by 29-Oct
+Deleted line 1 | on 28-Oct @ 13:08
+Deleted line 1 | on 28-Oct @ 13:08
+Deleted line 1 | on 28-Oct @ 13:08
+Listed entries | on 28-Oct @ 13:09
+Listed entries | on 29-Oct @ 11:48
+Deleted line 1 | on 29-Oct @ 11:49
+Deleted line 1 | on 29-Oct @ 11:50
+Deleted line 1 | on 29-Oct @ 11:50
